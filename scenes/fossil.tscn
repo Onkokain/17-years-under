@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://bh6ww5o5v7b3f"]
+
+[ext_resource type="Texture2D" uid="uid://cdpaag4iqghhp" path="res://fossil/F2080-1.png" id="1_kwprp"]
+[ext_resource type="Texture2D" uid="uid://thl5nj3fpxkt" path="res://fossil/F2080-2.png" id="2_jps5j"]
+[ext_resource type="Texture2D" uid="uid://ci5a5fwb5ft2u" path="res://fossil/F2080-3.png" id="3_2aapv"]
+[ext_resource type="Texture2D" uid="uid://ddnsqvsu0n401" path="res://fossil/F2080-4.png" id="4_0hv8w"]
+[ext_resource type="Texture2D" uid="uid://ckpae6j0mv6ip" path="res://fossil/F2080-5.png" id="5_rogag"]
+[ext_resource type="Texture2D" uid="uid://dmpxwm5kbtk4f" path="res://fossil/F2080-6.png" id="6_j4rdl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03vej"]
+atlas = ExtResource("1_kwprp")
+region = Rect2(0, 256, 512, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_laaf6"]
+atlas = ExtResource("2_jps5j")
+region = Rect2(0, 256, 512, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_knbgc"]
+atlas = ExtResource("3_2aapv")
+region = Rect2(0, 256, 512, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5q1vd"]
+atlas = ExtResource("4_0hv8w")
+region = Rect2(0, 256, 512, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hwe8"]
+atlas = ExtResource("5_rogag")
+region = Rect2(0, 256, 512, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lifr2"]
+atlas = ExtResource("6_j4rdl")
+region = Rect2(0, 256, 512, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jr6ll"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03vej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_laaf6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_knbgc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5q1vd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hwe8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lifr2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="fossil" type="CharacterBody2D" unique_id=770797349]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1539838032]
+position = Vector2(228, 114)
+scale = Vector2(0.109375, 0.109375)
+sprite_frames = SubResource("SpriteFrames_jr6ll")
+frame_progress = 0.6375026

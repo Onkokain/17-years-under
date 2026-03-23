@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dkr8b32dj0b3r"]
+
+[ext_resource type="Texture2D" uid="uid://crlt23w1nev6d" path="res://assets/fantasy_ [version 2.0]/17 YEARS BELOW/1.png" id="1_qcbyw"]
+
+[node name="learnmore" type="Node2D" unique_id=1153528397]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=671124448]
+position = Vector2(579, 326)
+texture = ExtResource("1_qcbyw")

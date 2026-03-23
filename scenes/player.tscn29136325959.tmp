@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://cxkpvsoy1p0bb"]
+
+[ext_resource type="Script" uid="uid://ck5xhe53o04o6" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://dw8lg0ha5ns2u" path="res://assets/fantasy_ [version 2.0]/cave_/nincada.png" id="2_g2els"]
+[ext_resource type="Texture2D" uid="uid://dthic2fusslti" path="res://assets/fantasy_ [version 2.0]/tundra_/nincada2.png" id="3_qhqgy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
+atlas = ExtResource("2_g2els")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
+atlas = ExtResource("3_qhqgy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
+atlas = ExtResource("2_g2els")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jej6c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuyoq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhqgy")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlg0r")
+}],
+"loop": true,
+"name": &"moving_right",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
+radius = 6.0827627
+
+[node name="player" type="CharacterBody2D" unique_id=44961627]
+script = ExtResource("1_g2els")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=969793559]
+sprite_frames = SubResource("SpriteFrames_jej6c")
+animation = &"jump"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=629172635]
+position = Vector2(1, -1)
+shape = SubResource("CircleShape2D_g2els")
+
+[node name="HeadRay" type="RayCast2D" parent="." unique_id=1567467063]
+target_position = Vector2(0, -20)

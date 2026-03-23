@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://da207gwaqgs2"]
+
+[ext_resource type="Texture2D" uid="uid://crlt23w1nev6d" path="res://assets/fantasy_ [version 2.0]/17 YEARS BELOW/1.png" id="1_5p8wc"]
+
+[node name="Settings" type="Node2D" unique_id=2111409931]
+
+[node name="Control" type="Control" parent="." unique_id=1520530657]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Control" unique_id=934220479]
+position = Vector2(577, 326)
+texture = ExtResource("1_5p8wc")

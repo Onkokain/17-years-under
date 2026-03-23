@@ -1,0 +1,233 @@
+[gd_scene format=3 uid="uid://co4wh446d245l"]
+
+[ext_resource type="Script" uid="uid://82t1ir08quv0" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://sn2uq2gpwd2q" path="res://assets/fantasy_ [version 2.0]/17 YEARS BELOW/1.png" id="2_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://bcsh1vw7us0c" path="res://assets/attachments/Learn-More-2-28-2026.png" id="3_8ln24"]
+[ext_resource type="Texture2D" uid="uid://rnr7s6644rl6" path="res://assets/attachments/Settings-2-28-2026.png" id="4_rtw2f"]
+[ext_resource type="Texture2D" uid="uid://drgefkhuev3hv" path="res://assets/attachments/New-Game-2-28-2026.png" id="5_oa1go"]
+[ext_resource type="PackedScene" uid="uid://5xh8pf2211jx" path="res://scenes/color_rect.tscn" id="6_rtw2f"]
+[ext_resource type="FontFile" uid="uid://c2gb8he1fd85l" path="res://fonts/PressStart2P-Regular.ttf" id="7_oa1go"]
+[ext_resource type="Script" uid="uid://c5vhm1xhn1wil" path="res://scripts/audio_control.gd" id="8_tbmy8"]
+[ext_resource type="Script" uid="uid://diqajryoi65cc" path="res://scripts/learnmore.gd" id="9_jk1qb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qjxba"]
+content_margin_left = 20.0
+content_margin_top = 14.0
+content_margin_right = 20.0
+content_margin_bottom = 14.0
+bg_color = Color(0, 0, 0, 0.3)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_oa1go"]
+color = Color(1, 1, 1, 1)
+thickness = 6
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_tbmy8"]
+color = Color(0.3475026, 0.54871655, 1, 1)
+thickness = 6
+
+[node name="main menu" type="Node2D" unique_id=1706999959]
+script = ExtResource("1_l6cm7")
+
+[node name="Control" type="Control" parent="." unique_id=1813238263]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="1" type="Sprite2D" parent="Control" unique_id=1489027610]
+position = Vector2(578, 328)
+texture = ExtResource("2_bqqt6")
+
+[node name="CenterContainer" type="CenterContainer" parent="Control" unique_id=1023774615]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 277.0
+offset_top = 168.0
+offset_right = 897.0
+offset_bottom = 570.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer" unique_id=833485427]
+custom_minimum_size = Vector2(620, 0)
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="StartCard" type="PanelContainer" parent="Control/CenterContainer/VBoxContainer" unique_id=1084898538]
+custom_minimum_size = Vector2(620, 122)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qjxba")
+
+[node name="Start" type="TextureButton" parent="Control/CenterContainer/VBoxContainer/StartCard" unique_id=1279333794]
+custom_minimum_size = Vector2(0, 94)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("5_oa1go")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="LearnMoreCard" type="PanelContainer" parent="Control/CenterContainer/VBoxContainer" unique_id=1663672477]
+custom_minimum_size = Vector2(620, 122)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qjxba")
+
+[node name="learnmore" type="TextureButton" parent="Control/CenterContainer/VBoxContainer/LearnMoreCard" unique_id=363314175]
+custom_minimum_size = Vector2(0, 94)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("3_8ln24")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="SettingsCard" type="PanelContainer" parent="Control/CenterContainer/VBoxContainer" unique_id=2083080045]
+custom_minimum_size = Vector2(620, 122)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qjxba")
+
+[node name="settings" type="TextureButton" parent="Control/CenterContainer/VBoxContainer/SettingsCard" unique_id=276328350]
+custom_minimum_size = Vector2(0, 94)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("4_rtw2f")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ColorRect" parent="." unique_id=298889762 instance=ExtResource("6_rtw2f")]
+visible = false
+
+[node name="fade_timer" type="Timer" parent="ColorRect" unique_id=731264485]
+
+[node name="settings" type="Panel" parent="." unique_id=1015868990]
+offset_left = 125.0
+offset_top = 134.0
+offset_right = 1031.0
+offset_bottom = 558.0
+
+[node name="Settings2282026" type="Sprite2D" parent="settings" unique_id=936336790]
+position = Vector2(479, 65)
+scale = Vector2(0.45214844, 0.46969697)
+texture = ExtResource("4_rtw2f")
+
+[node name="Button" type="Button" parent="settings" unique_id=1419789471]
+layout_mode = 0
+offset_left = 815.0
+offset_top = -1.0
+offset_right = 908.0
+offset_bottom = 97.0
+theme_override_fonts/font = ExtResource("7_oa1go")
+theme_override_font_sizes/font_size = 28
+text = "X"
+
+[node name="AudioControl" type="HSlider" parent="settings" unique_id=1889715227]
+layout_mode = 0
+offset_left = 449.0
+offset_top = 159.0
+offset_right = 764.0
+offset_bottom = 191.0
+theme_override_styles/slider = SubResource("StyleBoxLine_oa1go")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_tbmy8")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("8_tbmy8")
+audio_bus_name = "bg"
+
+[node name="AudioControl2" type="HSlider" parent="settings" unique_id=1153202693]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 221.0
+offset_right = 765.0
+offset_bottom = 253.0
+theme_override_styles/slider = SubResource("StyleBoxLine_oa1go")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_tbmy8")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("8_tbmy8")
+audio_bus_name = "effects"
+
+[node name="Label" type="Label" parent="settings" unique_id=333157315]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 167.0
+offset_right = 433.0
+offset_bottom = 195.0
+theme_override_fonts/font = ExtResource("7_oa1go")
+text = "Background Music"
+
+[node name="Label2" type="Label" parent="settings" unique_id=1249130843]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 231.0
+offset_right = 373.0
+offset_bottom = 254.0
+theme_override_fonts/font = ExtResource("7_oa1go")
+text = "Sound Effects"
+
+[node name="learnmore" type="Panel" parent="." unique_id=1941483225]
+visible = false
+offset_left = 124.0
+offset_top = 132.0
+offset_right = 1029.0
+offset_bottom = 557.0
+script = ExtResource("9_jk1qb")
+
+[node name="Button" type="Button" parent="learnmore" unique_id=1550226786]
+layout_mode = 0
+offset_left = 815.0
+offset_top = 1.0
+offset_right = 905.0
+offset_bottom = 99.0
+theme_override_fonts/font = ExtResource("7_oa1go")
+theme_override_font_sizes/font_size = 28
+text = "X"
+
+[node name="LearnMore2282026" type="Sprite2D" parent="learnmore" unique_id=1228679673]
+position = Vector2(466, 61.999985)
+scale = Vector2(0.48095706, 0.5454545)
+texture = ExtResource("3_8ln24")
+
+[node name="LinkButton" type="LinkButton" parent="learnmore" unique_id=496821618]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 193.0
+offset_right = 872.0
+offset_bottom = 229.0
+theme_override_fonts/font = ExtResource("7_oa1go")
+theme_override_font_sizes/font_size = 28
+text = "Learn More about the game here"
+underline = 1
+
+[node name="Label" type="Label" parent="." unique_id=1815851765]
+offset_left = 38.0
+offset_right = 1188.0
+offset_bottom = 166.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_oa1go")
+theme_override_font_sizes/font_size = 60
+text = "17 Years Under"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Control/CenterContainer/VBoxContainer/StartCard/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/VBoxContainer/LearnMoreCard/learnmore" to="." method="_on_learnmore_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/VBoxContainer/SettingsCard/settings" to="." method="_on_settings_pressed"]
+[connection signal="timeout" from="ColorRect/fade_timer" to="." method="_on_fade_timer_timeout"]
+[connection signal="pressed" from="settings/Button" to="." method="_on_button_pressed"]
+[connection signal="value_changed" from="settings/AudioControl" to="settings/AudioControl" method="_on_value_changed"]
+[connection signal="value_changed" from="settings/AudioControl2" to="settings/AudioControl2" method="_on_value_changed"]
+[connection signal="pressed" from="learnmore/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="learnmore/LinkButton" to="learnmore" method="_on_link_button_pressed"]

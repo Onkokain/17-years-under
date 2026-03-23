@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://cavjkj4stjmsf"]
+
+[ext_resource type="Script" uid="uid://cs0qo3ggtcebr" path="res://scripts/cutscene.gd" id="1_edmg7"]
+[ext_resource type="PackedScene" uid="uid://ygwcwyq8y6gc" path="res://scenes/game.tscn" id="2_0sipp"]
+[ext_resource type="FontFile" uid="uid://c2gb8he1fd85l" path="res://fonts/PressStart2P-Regular.ttf" id="2_a320b"]
+
+[sub_resource type="Animation" id="Animation_l8ll4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_edmg7"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.26666665, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_a320b"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0sipp"]
+_data = {
+&"RESET": SubResource("Animation_l8ll4"),
+&"fade_in": SubResource("Animation_edmg7"),
+&"fade_out": SubResource("Animation_a320b")
+}
+
+[node name="cutscene" type="Node2D" unique_id=1145433492]
+script = ExtResource("1_edmg7")
+
+[node name="GameMap" parent="." unique_id=81041574 instance=ExtResource("2_0sipp")]
+process_mode = 4
+position = Vector2(0, 2)
+
+[node name="Timer" type="Timer" parent="." unique_id=777663016]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=111191327]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=553203443]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 3.0
+offset_bottom = -329.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_a320b")
+theme_override_font_sizes/font_size = 40
+text = "HALLO WORLD"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1543327474]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.17254902, 0.16078432, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/ColorRect" unique_id=1328373181]
+libraries/ = SubResource("AnimationLibrary_0sipp")
+
+[node name="end" type="Label" parent="CanvasLayer" unique_id=1316024511]
+offset_left = 254.0
+offset_top = 463.0
+offset_right = 919.0
+offset_bottom = 486.0
+theme_override_fonts/font = ExtResource("2_a320b")
+theme_override_font_sizes/font_size = 19
+text = "And you thought you could seek help?"
+
+[node name="end_good" type="Label" parent="CanvasLayer" unique_id=214746492]
+offset_left = 327.0
+offset_top = 527.0
+offset_right = 992.0
+offset_bottom = 550.0
+theme_override_fonts/font = ExtResource("2_a320b")
+theme_override_font_sizes/font_size = 19
+text = "You won.. but at what cost.."
